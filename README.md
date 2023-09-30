@@ -14,7 +14,7 @@ In the "script" folder, you'll discover the magic behind our web interactivity. 
 
 The "style" folder is where the visual aesthetics come to life. Our CSS (Cascading Style Sheets) files, stored here, define the web pages' visual style, layout, and presentation.
 
-# Note
+## Note
 
 While we don't provide dedicated reports for these projects, you can delve into the code files and their embedded comments to gain a deeper understanding of the implementation details.
 
