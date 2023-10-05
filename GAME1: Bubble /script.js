@@ -7,20 +7,35 @@ function printall(){
     document.querySelector(".contain").innerHTML = total;
 }
 
-function endgame(inputed){
-    if(inputed == 0){
-        // alert("hi");
+function endgame(inputed, cause){
+    if(inputed == 0 ){
+        if(count == 0){
+            a = document.querySelector(".alert");
+            a.style.visibility = "visible";
+            document.querySelector("#alert_ecceded").textContent = cause;
+            
+            document.querySelector("#alert_timer").textContent = document.querySelector("#timerp").textContent;
+            document.querySelector("#alert_score").textContent = document.querySelector("#scorep").textContent;
+
+            document.querySelector("#alert_button_retry").addEventListener("click", function(){
+                location.reload();
+            });
+            count += 1;
+        }
     }
 }
 
 function timer(time){
     var terminal_console = setInterval(function(){
+        if (count == 1){
+            time = 0;
+        }
         if (time > 0){
             time = time-1;
             document.querySelector("#timer p").textContent = time;
         }
         else{
-            endgame(time);
+            endgame(time, "Timer");
             clearInterval(terminal_console);
         }
     }, 1000);
@@ -48,7 +63,8 @@ function click_next(){
 
 printall();
 
-const inputed_time = 6;
+var count = 0;
+const inputed_time = 60;
 timer(inputed_time);
 var searchfor;
 findval(searchfor);
@@ -78,7 +94,7 @@ document.querySelector(".contain").addEventListener("click",function(details){
             clearInterval(onesec_delay);
         }
     }, 1000);
-    endgame(Number(document.querySelector("#attempt p").textContent));
+    endgame(Number(document.querySelector("#attempt p").textContent), "Attempt");
 });
 
 click_next();
