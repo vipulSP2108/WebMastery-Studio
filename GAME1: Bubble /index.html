@@ -17,6 +17,7 @@
                     <h1>Last</h1>
                     <p id="#priviousp">1</p>
                 </div>
+                <div class="small"><p id="priviousp">1</p></div>
                 <div id="now" class="eliments_main1_bet">
                     <h1 id="#nowh">Find!</h1>
                     <p id="#nowp">1</p>
@@ -25,6 +26,7 @@
                     <h1>Next</h1>
                     <p id="#nextp">1</p>
                 </div>
+                <div class="small"><p id="nextp">1</p></div>
             </div>
             <div class="contain">
                 <div class="box"></div>
@@ -33,7 +35,7 @@
         <div class="main2">
             <div id="timer" class="eliments_main2">
                 <h1>TIMER</h1>
-                <p id="timerp">60</p>
+                <p id="timerp"></p>
             </div>
             <div id="score" class="eliments_main2">
                 <h1 id="scoreh">SCORE</h1>
@@ -47,7 +49,16 @@
                 <h6>Back to Menu</h6>
             </div>
         </div>
-        <div class="alert"></div>
+        <div class="alert">
+            <h1><u style="color: #d6c4b0;">Game Over!</u></h1>
+            <h3> You Exceeded your <span style="color:#d6c4b0; text-decoration: #d84f2a solid underline; font-size: larger; font-weight: 900;" id="alert_ecceded"></span></h3>
+            <h3> Score :    <span style="color:#d6c4b0; text-decoration: #d84f2a solid underline; font-size: larger; font-weight: 900;" id="alert_score"></span>       Timer : <span style="color:#d6c4b0; text-decoration: #d84f2a solid underline; font-size: larger; font-weight: 900;" id="alert_timer"></span></h3>
+            <p style="font-style: italic;">better luck next time</p>
+            <div class="alert_buttons">
+                <button style="border-radius: 12px; background-color: #091d26; color: #ede6df; height: 6vh; width: 12vh;" id="alert_button_retry">Retry</button>
+                <button style="border-radius: 12px; background-color: #091d26; color: #ede6df; height: 6vh; width: 12vh;" id="alert_button_back">Back</button>
+            </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
