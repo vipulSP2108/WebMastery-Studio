@@ -1,0 +1,80 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+body{
+    /* position: sticky; */
+    /* height: 100%; */
+    margin: 0;
+    position: relative;
+    /* width: 100%;  */
+}
+
+#rootwindow {
+    height: 100%;
+    display: flex;
+    background-color: #555;
+    position: absolute;
+    /* 515151 */
+    width: 18%;
+    opacity: 0.9;
+}
+
+#toolbar{
+    margin-top: 5%;
+    height: 98%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toolbar-button{
+    display: flex;
+    margin: 3%;
+    justify-content:space-between;
+    height: 7%;
+    width: 88%;
+    background-color: #3d3d3d;
+    border-color: #040404;
+    /* opacity: 1; */
+    border-radius: 5px;
+    border-style: solid;
+    color: #f4f4f4;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.toolbar-button-text{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.toolbar-button-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 100%;
+}
+
+#information{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35%;
+}
+
+.toolbar-button.selected{
+    background-color: #000000;
+}
+
+.toolbar-button:not(.selected):hover{
+    background-color: #202020;
+    transform: scale(1.06);
+    transition: transform 0.3s ease;
+    border-color: #f4f4f4;
+}
