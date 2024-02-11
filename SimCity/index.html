@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/main.css"/>
+    <!-- <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@<version>/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@/examples/jsm/"
+          }
+        }
+    </script> -->
+</head>
+<body>
+    <div id="rootwindow">
+        <div id="toolbar">
+            <button class="toolbar-button" id="button-residence" onclick="setActiveTool(event, 'residence')"><div class="toolbar-button-image">PP</div><div class="toolbar-button-text">RESIDENCE</div></button>
+            <button class="toolbar-button" id="button-industry" onclick="setActiveTool(event, 'industry')"><div class="toolbar-button-image">PP</div><div class="toolbar-button-text">INDUSTRY</div></button>
+            <button class="toolbar-button" id="button-commercial" onclick="setActiveTool(event, 'commercial')"><div class="toolbar-button-image">PP</div><div class="toolbar-button-text">COMMERCIAL</div></button>
+            <button class="toolbar-button" id="button-road" onclick="setActiveTool(event, 'road')"><div class="toolbar-button-image">PP</div><div class="toolbar-button-text">ROAD</div></button>
+            <button class="toolbar-button" id="information" onclick="setActiveTool(event, 'information')">i</button>
+            <button class="toolbar-button" id="button-bulldozer" onclick="setActiveTool(event, 'bulldozer')"><div class="toolbar-button-image">PP</div><div class="toolbar-button-text">BULLDOZER</div></button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        import {createGame} from './src/game.js';
+
+        window.onload = () => {
+            window.game = createGame();
+            game = game
+        }
+
+        var selectedID = undefined;
+        window.setActiveTool = (event, toolID) => {
+            if(selectedID){
+                selectedID.classList.remove("selected");
+            }
+            selectedID = event.target.closest('.toolbar-button');
+            selectedID.classList.add("selected");
+
+            window.game.setActiveToolID(toolID);
+        }
+
+
+
+                // var selected = 0;
+        // var currentselected = undefined;
+        // var toolbarelements = document.getElementsByClassName("toolbar-button")
+        // var elementsArray = [...toolbarelements];
+        // elementsArray.forEach(element => {
+        //     element.addEventListener("click", function(){
+        //         if (currentselected){
+        //             currentselected.classList.remove("selected");
+        //         }
+        //         element.classList.add("selected");
+        //         selected = 1;
+        //         currentselected = element;
+        //     })
+        // })           
+
+        // var toolbarelements = document.getElementsByClassName("toolbar-button")
+        // var elementsArray = [...toolbarelements];
+
+        // elementsArray.forEach(element => {
+        //     var originalStyle = {
+        //         backgroundColor: getComputedStyle(element).backgroundColor,
+        //         transform: getComputedStyle(element).transform
+        //     };
+        //     element.addEventListener("mouseover", function(){
+        //         element.style.backgroundColor = "#202020";
+        //         element.style.transform = "scale(1.06)";
+        //         element.style.transition = "transform 0.3s ease";
+        //         // 868686
+        //         // 202020
+        //     })
+        //     element.addEventListener("mouseout", function(){
+        //         element.style.backgroundColor = originalStyle.backgroundColor;
+        //         element.style.transform = originalStyle.transform;
+        //     })
+        // });
+
+    </script>
+
+    <!-- <script src="./scene.js" type="module"></script> -->
+</body>
+</html>
+
+<!-- 
+<Html 
+transform
+center
+> 
+
+</Html> -->
